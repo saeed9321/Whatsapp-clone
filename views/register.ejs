@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/reg/style.css">
+    <script src="socket.io/socket.io.js"></script>
+    <script defer src="./client.js"></script>
+    <script defer src="./static/reg/reg.js"></script>
+    <title>Whatsapp Registeration</title>
+</head>
+<body>
+    <div class="container">
+        <% if (messages.error) {%>
+            <div class="err-flash"><%= messages.error %></div>
+        <% } %>
+        <% if (messages.success) {%>
+            <div class="suc-flash"><%= messages.success %></div>
+        <% } %>
+        <div class="box">
+            <button id="login-btn">Login in</button>
+            <button id="register-btn">Sign up</button>
+
+            <form action="/login" method="post" id="login">
+                <h1>Login in</h1>
+                <input type="text" name="username" placeholder="Username" required="true" value="Saeed9321">
+                <input type="password" name="password" placeholder="Password"  required="true" value="123">
+                <button type="submit" id="loginBtn">Login</button>
+            </form>
+
+            <form action="/reg" method="post" id="register">
+                <h1>Sign up</h1>
+                <input type="text" name="username" placeholder="Username" required="true">
+                <input type="password" name="password" placeholder="Password" required="true">
+                <input type="email" name="email" placeholder="E-mail" required="true">
+                <button type="submit">Sign up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #039588,  #06b9aa);
+    display: grid;
+    place-items: center;
+}
+.box{
+    width: 70%;
+    height: 70%;
+    background-color: white;
+    box-shadow: 0px 0px 5px black;
+    overflow: hidden;
+    position: relative;
+}
+#login-btn{
+    background-color:  rgb(109, 187, 161);
+    color: white;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    height: 50px;
+    position: absolute;
+    left: 0%;
+    top: calc(50% - 20px);
+    border-radius: 5px;
+    transform: translateX(25%);
+    z-index: 1;
+    cursor: pointer;
+}
+#register-btn{
+    background-color:  rgb(109, 187, 161);
+    color: white;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 20px);
+    border-radius: 5px;
+    transform: translateX(25%);
+    z-index: 1;
+    cursor: pointer;
+}
+#login {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(109, 187, 161);
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    position: absolute;
+    top: 0%;
+    z-index: 3;
+    transition: 0.5s;
+}
+#register{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(109, 187, 161);
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: 2;
+    transition: 0.5s;
+}
+h1{
+    font-weight: 900;
+    font-size: 70px;
+    margin-bottom: 50px;
+    font-family: monospace;
+    color: white;
+}
+input{
+    width: 60%;
+    height: 40px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 3px;
+}
+button{
+    width: 30%;
+    height: 40px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: darkgreen
+}
+.login-go-right{
+    transform: translateX(100%);
+    z-index: 2 !important;
+    transition: 0.5s;
+}
+.register-go-right{
+    transform: translateX(100%);
+    z-index: 3 !important;
+    transition: 0.5s;
+}
+.err-flash{
+    position: absolute;
+    z-index: 100;
+    font-size: 20px;
+    color: red;
+    background-color: white;
+    animation: hideFlash 1s;
+    animation: hideFlash 1s 1s forwards;
+}
+.suc-flash{
+    position: absolute;
+    z-index: 100;
+    font-size: 20px;
+    color: green;
+    background-color: rgb(255, 255, 255);
+    animation: hideFlash 1s 1s forwards;
+}
+@keyframes hideFlash{
+    to {
+        opacity: 0;
+    }
+}

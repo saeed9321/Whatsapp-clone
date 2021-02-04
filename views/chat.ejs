@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script defer src="./client.js"></script>
+    <script defer src="./static/chat/style.js"></script>
+    <link rel="stylesheet" href="./static/chat/style.css">
+    <title>Whatsapp Clone</title>
+</head>
+<body>
+    <% if (messages.error) {%>
+        <div class="err-flash"><%= messages.error %></div>
+    <% } %>
+    <% if (messages.success) {%>
+        <div class="suc-flash"><%= messages.success %></div>
+    <% } %>
+    <div class="container">
+        <div class="changeUserForm">  
+            <div id="Form">
+                <div id="close">X</div>
+                <input type="text" name="newUsername" id="newUsername">
+                <button id="userFormBtn">Change</button>
+            </div>
+        </div>
+        <div class="changePicForm">  
+            <div id="Form">
+                <div id="close">X</div>
+                <input type="text" name="newPic" id="newPic" placeholder="Paste an image URL here">
+                <button id="picFormBtn">Change</button>
+            </div>
+        </div>
+        <div class="interface">
+            <div class="left-side">
+                <div class="my-account">
+                    <div class="settings">
+                        <div id="account-settings-btn"></div>
+                        <ul class="account-settings-menu">
+                            <li><a id="changeUsernameBtn">Change Username</a></li>
+                            <li><a id="changePicBtn">Change Profile Picture</a></li>
+                            <li>Help</li>
+                            <li><a id="logout" href="/logout">logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <form id="add-contact">
+                    <input type="text" name="user" id="user" placeholder="Add new user" required="true">
+                    <button type="submit" id="add-friend">Add</button>
+                </form>
+                <div class="contact-list">
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="chat-head"></div>
+                <div class="chat-body">
+                    <div id="msgs">
+                        
+                    </div>
+                </div>
+                <div class="chat-command">
+                    <input type="text" name="newMsg" id="msg">
+                    <button type="submit" id="sendMsg"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

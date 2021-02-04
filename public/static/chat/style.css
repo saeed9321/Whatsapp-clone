@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+    background-image: linear-gradient(to right, #039588,  #06b9aa);
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.changeUserForm,
+.changePicForm{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.473);
+    z-index: 10;
+    display: none;
+    place-items: center;
+}
+#close {
+    width: 30px;
+    height: 30px;
+    background-color: #06b9aa;
+    position: absolute;
+    border-radius: 50%;
+    left: 10%;
+    top: 20%;
+    color: white;
+    font-weight: bolder;
+    display: grid;
+    place-items: center;
+    z-index: 10;
+    cursor: pointer;
+}
+#Form{
+    height: 40%;
+    width: 30%;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    top: -200px;
+    animation: form 2s forwards;
+}
+@keyframes form {
+    0% {
+        clip-path: circle(10px);
+    }
+    20% {
+        top: 200px;
+    }
+    100% {
+        top: 200px;
+        clip-path: circle(200px);
+    }
+}
+#Form button{
+    width: 70%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: #06b9aa;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.747);
+    border-radius: 0px 0px 10px 10px;
+}
+#Form input{
+    width: 70%;
+    height: 40px;
+    border-radius: 10px 10px 0px 0px;
+    outline: none;
+    font-size: 15px;
+    border: none;
+    text-align:center;
+    color:  #039588;
+
+}
+.interface {
+    width: 95%;
+    height: 95vh;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.459);
+    display: flex;
+}
+.left-side{
+    width: 30%;
+    height: 100%;
+}
+.left-side .my-account{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(238, 234, 234);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile-image{
+    width: 55px;
+    height: 55px;
+    margin-left: 10px;
+    clip-path: circle(25px);
+}
+.my-account h1{
+    font-size: 20px;
+    margin-left: -30%;
+}
+.settings{
+    position: relative;
+}
+#account-settings-btn {
+    background-image: url('./settings-icon.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+#account-settings-btn:hover{
+    background-color: rgb(192, 190, 190);
+}
+.account-settings-menu{
+    list-style-type: none;
+    width:  200px;
+    height: 150px;
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    position: absolute;
+    top: 40px;
+    right: -20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.356);
+    z-index: 1000;
+}
+.account-settings-menu li{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 20px;
+    cursor: pointer;
+}
+.account-settings-menu li:hover{
+    background-color:rgb(223, 223, 223)
+}
+.account-settings-menu a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#add-contact{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#add-contact input{
+    width: 80%;
+    height: 100%;
+    border: 1px solid rgb(223, 223, 223);
+    outline: none;
+    padding-left: 5px;
+}
+#add-contact button {
+    width: 30%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+}
+.contact-list{
+    height: calc(100% - 90px);
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.contact-item{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    text-align: start;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.active-contact {
+    background-color:rgb(223, 222, 222);
+}
+.contact-item:hover{
+    background-color:rgb(223, 222, 222);
+}
+.contact-img{
+    width: 55px;
+    margin: auto;
+    clip-path: circle(25px);
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.contact-name{
+    font-size: larger;
+    margin-top: auto;
+    margin-bottom: 2px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.last-msg{
+    font-size: 14px;
+    color:grey;
+    margin-top: 2px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.last-msg-date{
+    font-size: 12px;
+    margin: auto 10px 0px auto;
+    color: grey;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.right-side{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+.chat-head{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(238, 234, 234);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.774);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+}
+.chat-head .contact-img {
+    margin: auto 20px auto 30px;
+}
+.chat-head .contact-name{
+    margin: auto auto auto 0px;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #656565;
+}
+.chat-head .contact-name #lastSeen{
+    font-size: 12px;
+    font-weight: normal;
+}
+.chat-body{
+    width: 100%;
+    height:  calc(100% - 120px);
+    position: relative;
+    overflow-y: scroll;
+    background-image: url('./chat-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 20px;
+  }
+#msgs{
+    list-style-type: none;
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#outgoingMsg{
+    background-color:rgb(255, 255, 255);
+    width: min-content;
+    height: min-content;
+    min-width: 80px;
+    min-height: 55px;
+    padding: 10px;
+    margin: 5px 30px 10px auto;
+    border-radius: 20px;
+    font-size: large;
+    background-color: #039588;
+    color: white;
+}
+#incomingMsg{
+    background-color:rgb(255, 255, 255);
+    width: min-content;
+    height: min-content;
+    min-width: 80px;
+    min-height: 55px;
+    padding: 10px;
+    margin: 5px 5px 10px 30px;
+    border-radius: 20px;
+    font-size: large;
+    
+}
+#msgDateOutgoing {
+    color: #e1e0e0;
+    font-size: 12px;
+    position: absolute;
+    right: 0px;
+    transform: translate(-175%, 40%);
+}
+#msgDateIncoming {
+    color: #a19c9c;
+    font-size: 12px;
+    position: absolute;
+    left: 0px;
+    transform: translate(175%, 40%);
+}
+.chat-command{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(238, 234, 234);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 1px black;
+}
+.chat-command #msg {
+    width: 80%;
+    height: 60%;
+    border: none;
+    outline: none;
+    padding-left: 5px;
+}
+.chat-command button{
+    width: 10%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-image: url('./chat-send-icon.jpg');
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    margin-left: 5%;
+}
+.err-flash{
+    position: absolute;
+    z-index: 100;
+    font-size: 20px;
+    color: red;
+    background-color: white;
+    animation: hideFlash 1s;
+    animation: hideFlash 1s 1s forwards;
+}
+.suc-flash{
+    position: absolute;
+    z-index: 100;
+    font-size: 20px;
+    color: green;
+    background-color: rgb(255, 255, 255);
+    animation: hideFlash 1s 1s forwards;
+}
+@keyframes hideFlash{
+    to {
+        opacity: 0;
+    }
+}

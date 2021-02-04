@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script defer src="./client.js"></script>
+    <script defer src="./static/style.js"></script>
+    <link rel="stylesheet" href="./static/style.css">
+    <title>Whatsapp Clone</title>
+</head>
+<body>
+    <div class="register-login-container">
+        <form action="/" method="post">
+            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="password" name="password" id="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div class="container">
+        <div class="interface">
+            <div class="left-side">
+                <div class="my-account">
+                    <div class="profile-image"></div>
+                    <div class="settings">
+                        <div id="account-settings-btn"></div>
+                        <ul class="account-settings-menu">
+                            <li>Profile & status</li>
+                            <li>Notifications</li>
+                            <li>Help</li>
+                            <li>Log out</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-list">
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="chat-head"></div>
+                <div class="chat-body">
+                    <img src="./static/chat-background.jpg" alt="" id="chat-background">
+                    <ul id="msgs"></ul>
+                </div>
+                <div class="chat-command">
+                    <input type="text" name="" id="msg">
+                    <button type="submit"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

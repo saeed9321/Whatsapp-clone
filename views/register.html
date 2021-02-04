@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/static/reg/style.css">
+    <script defer src="../public/static/reg/reg.js"></script>
+    <title>Whatsapp Registeration</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <button id="login-btn">Login in</button>
+            <button id="register-btn">Sign up</button>
+            <form action="register" method="post" id="login">
+                <h1>Login in</h1>
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+            <form action="register" method="post" id="register">
+                <h1>Sign up</h1>
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+                <input type="email" name="email" placeholder="E-mail">
+                <button type="submit">Sign up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
