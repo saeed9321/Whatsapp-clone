@@ -387,3 +387,35 @@
         opacity: 0;
     }
 }
+
+@media screen and (max-width : 450px){
+    .container {
+        height: 70vh;
+        overflow: hidden;
+    }
+    .interface {
+        flex-direction: column;
+        max-width: 95vw;
+    }
+    .left-side{
+        width: 100%;
+        height: 20%;
+    }
+    .contact-list{
+        display: flex;
+        align-items: center;
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+    .contact-item {
+        min-width: 150px;
+    }
+    .right-side{
+        width: 100%;
+    }
+    .last-msg{
+        max-width: 40px;
+        max-height: 20px;
+        overflow: hidden;
+    }
+}
